@@ -1,0 +1,28 @@
+{
+
+  "name": "whatsapp_bot",
+  "version": "0.0.1",
+  "description": "A WhatsApp Dictionary Bot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "lodash": "4.17.11",
+    "request": "^2.88.0",
+    "twilio": "^4.6.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/Yusadolat/DicoBot.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "twilo",
+    "express"
+  ]
+}
