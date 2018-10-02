@@ -5,8 +5,8 @@ var _ = require('lodash');
 const bodyParser = require('body-parser');
 
 
-const accountSid = process.env.SID || 'AC2bb4ef8d22682ed2d77b33347f318806';
-const authToken = process.env.SID || '93fca4aaff9c5c489a5d928a6a7f4b10';
+const accountSid = process.env.SID;
+const authToken = process.env.SID;
 const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
@@ -27,7 +27,7 @@ app.post('/incoming', (req, res) => {
       console.log('body:', body["word"]);
       var example;
       var define;
-      var synonyms;
+      var synonyms; //synonmys Added
       if (_.has(body, 'meaning.adjective') === true) {
         define = body["meaning"]["adjective"][0]["definition"]
         example = body["meaning"]["adjective"][0]["example"]
@@ -51,8 +51,7 @@ app.post('/incoming', (req, res) => {
         console.log("yyy");
       }
 
-      // define start here
-      //     var example;
+      
 
 
       var msg = twiml.message(`*${body["word"]}*
