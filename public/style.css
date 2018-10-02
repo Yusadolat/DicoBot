@@ -23,7 +23,7 @@ p {
 
 form {
   margin-bottom: 25px;
-  padding: 15px;
+  padding: 20px;
   background-color: cyan;
   display: inline-block;
   width: 100%;
@@ -43,7 +43,7 @@ input {
 
 button {
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: lightgrey;
   border: 1px solid grey;
   box-shadow: 2px 2px teal;
@@ -65,5 +65,5 @@ li {
 footer {
   margin-top: 50px;
   padding-top: 25px;
-  border-top: 1px solid lightgrey;
+  border-top: 3px solid lightgrey;
 }
