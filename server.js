@@ -1,7 +1,7 @@
-var express = require('express');
-var app = express();
-var request = require('request');
-var _ = require('lodash');
+const express = require('express');
+const app = express();
+const request = require('request');
+const _ = require('lodash');
 const bodyParser = require('body-parser');
 
 
@@ -11,7 +11,6 @@ const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 app.use(express.static('public'));
-//.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
@@ -27,7 +26,7 @@ app.post('/incoming', (req, res) => {
       console.log('body:', body["word"]);
       var example;
       var define;
-      var synonyms; //synonmys Added
+      var synonyms; 
       if (_.has(body, 'meaning.adjective') === true) {
         define = body["meaning"]["adjective"][0]["definition"]
         example = body["meaning"]["adjective"][0]["example"]
@@ -48,7 +47,7 @@ app.post('/incoming', (req, res) => {
 
 
       } else {
-        console.log("yyy");
+        console.log("Sorry, No Result Found !");
       }
 
       
