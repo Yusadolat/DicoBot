@@ -5,8 +5,8 @@ var _ = require('lodash');
 const bodyParser = require('body-parser');
 
 
-const accountSid = process.env.SID || 'AC2bb4ef8d22682ed2d77b33347f318806';
-const authToken = process.env.SID || '93fca4aaff9c5c489a5d928a6a7f4b10';
+const accountSid = process.env.SID;
+const authToken = process.env.SID;
 const client = require('twilio')(accountSid, authToken);
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
