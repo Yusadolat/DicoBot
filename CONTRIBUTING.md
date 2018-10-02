@@ -1,68 +1,72 @@
-# Contributing to DicoBot
+# Contribution Guidelines
 
 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
-- Becoming a maintainer
+First of all, thanks for thinking of contributing to this project! 👏
+
+This project has a [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 
 The following is a set of guidelines for contributing to this project, which is maintained on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 
 ## We Develop with Github
+=======
+## ❤️ Ways to Contribute
 
-We use github to host code, to track issues and feature requests, as well as accept pull requests.
+* Blog or tweet about the project
+* Improve documentation
+* Fix a bug
+* Implement a new feature
+* Discuss potential ways to improve project
+* Improve existing implementation, performance, etc.
 
 ## We Use Github Flow, So All Code Changes Happen Through Pull Requests
 
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
+## 🛎 Questions
 
-1. Fork the repo and create your branch from `master`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
-6. Issue that pull request!
+Please put some effort in requesting a new feature. If someone else is going to implement something, the least you can do is describe the feature in detail, and why it would be useful to others as well.
 
-## Any contributions you make will be under the MIT Software License
+## 🐛 File a Bug
 
-In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
+
+* You have read the [documentation](https://github.com/yusadolat/DicoBot/master/README.md) first, and double-checked your configuration.
+* You have acknowledged from `--verbose` and `--debug` the errors are likely a bug in this project (and not coming from your environment or a dependency of this project).
+* In your issue description, please include:
+	* What you expected to see, and what happened instead.
+	* Your operating system and other environment information.
+	* As much information as possible, such as the command and configuration used.
+	* Interesting logs with `--verbose` and/or `--debug`.
+	* All steps to reproduce the issue.
 
 ## Report bugs using Github's issues
 
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/Yusadolat/DicoBot/issues); it's that easy!
 
-## Write bug reports with detail, background, and sample code
+## 🎁 Pull Requests
 
-[This is an example](http://stackoverflow.com/q/12488905/180626) of a bug report I wrote, and I think it's not a bad model. Here's [another example from Craig Hockenberry](http://www.openradar.me/11905408), an app developer whom I greatly respect.
+Pull requests are welcome! Please keep the following in mind:
 
-**Great Bug Reports** tend to have:
 
-- A quick summary and/or background
-- Steps to reproduce
-  - Be specific!
-  - Give sample code if you can. [My stackoverflow question](http://stackoverflow.com/q/12488905/180626) includes sample code that _anyone_ with a base R setup can run to reproduce what I was seeing
-- What you expected would happen
-- What actually happens
-- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+* See below for instructions on how to set up the project on your machine.
+* To match the existing code styling, use `npm run prettier` before committing code.
+* Make sure the tests pass (run `npm test`). Your changes probably deserve new tests as well.
+Unsure about whether you should open a pull request? Feel free to discuss it first in a ticket.
 
-People _love_ thorough bug reports. I'm not even kidding.
+Set up the project on your machine:
 
-## Use a Consistent Coding Style
+```bash
+git clone https://github.com/yusadolat/DicoBot
+cd DicoBot
+npm install
+```
 
-I'm again borrowing these from [Facebook's Guidelines](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
+Verify the tests are passing:
 
-- 2 spaces for indentation rather than tabs
-- You can try running `npm run lint` for style unification
+```
+npm test
+```
 
-## License
-
-By contributing, you agree that your contributions will be licensed under its MIT License.
-
-## References
-
-This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
+Thank You ! :smile:
