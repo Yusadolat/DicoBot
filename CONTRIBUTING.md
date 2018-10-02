@@ -19,7 +19,6 @@ Please put some effort in requesting a new feature. If someone else is going to 
 
 ## 🐛 File a Bug
 
-In case you've encountered a bug, please make sure:
 
 * You have read the [documentation](https://github.com/yusadolat/DicoBot/master/README.md) first, and double-checked your configuration.
 * You have acknowledged from `--verbose` and `--debug` the errors are likely a bug in this project (and not coming from your environment or a dependency of this project).
@@ -37,8 +36,6 @@ Pull requests are welcome! Please keep the following in mind:
 * See below for instructions on how to set up the project on your machine.
 * To match the existing code styling, use `npm run prettier` before committing code.
 * Make sure the tests pass (run `npm test`). Your changes probably deserve new tests as well.
-* Remember that this project is cross-platform compatible (macOS, Windows, Linux), and that it runs in different versions of Node.
-
 Unsure about whether you should open a pull request? Feel free to discuss it first in a ticket.
 
 Set up the project on your machine:
