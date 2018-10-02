@@ -6,7 +6,7 @@ When you search a word, you get the word meaning and it's usage. It's so fast an
 
 Our DicoBot can be found here: [https://yusadolat.github.io/whatsbot/](https://yusadolat.github.io/whatsbot/)
 
-##Building and Contributing
+## Building and Contributing
 
 ### Building 
 ##### Installing dependencies:
@@ -21,5 +21,5 @@ $ npm start
 
 > App is running on http://localhost:3000
 
-###Contributing
+### Contributing
 See [CONTRIBUTING.md](https://github.com/Yusadolat/DicoBot/blob/master/CONTRIBUTING.md)
