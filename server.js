@@ -27,7 +27,7 @@ app.post('/incoming', (req, res) => {
       console.log('body:', body["word"]);
       var example;
       var define;
-      var synonyms;
+      var synonyms; //synonmys Added
       if (_.has(body, 'meaning.adjective') === true) {
         define = body["meaning"]["adjective"][0]["definition"]
         example = body["meaning"]["adjective"][0]["example"]
@@ -51,8 +51,7 @@ app.post('/incoming', (req, res) => {
         console.log("yyy");
       }
 
-      // define start here
-      //     var example;
+      
 
 
       var msg = twiml.message(`*${body["word"]}*
