@@ -23,6 +23,13 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 5. Make sure your code lints.
 6. Issue that pull request!
 
+### First time installation
+
+1. Install [git](https://git-scm.com).
+2. Install [node.js](https://nodejs.org)(version >= 8).
+3. [Clone this repository](https://help.github.com/articles/cloning-a-repository/)
+4. Install the dependencies by running `npm install` in that folder.
+ 
 ## Any contributions you make will be under the MIT Software License
 
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
