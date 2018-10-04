@@ -9,6 +9,11 @@ Our DicoBot can be found here: [https://yusadolat.github.io/whatsbot/](https://y
 ## Building and Contributing
 
 ### Building 
+#### Clone Repository
+```sh
+$ git clone https://github.com/Yusadolat/DicoBot.git && cd DicoBot
+```
+
 ##### Installing dependencies:
 ```sh
 $ npm install
