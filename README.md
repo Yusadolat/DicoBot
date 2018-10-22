@@ -28,3 +28,5 @@ $ npm start
 
 ### Contributing
 See [CONTRIBUTING.md](https://github.com/Yusadolat/DicoBot/blob/master/CONTRIBUTING.md)
+
+# Enyoy !
