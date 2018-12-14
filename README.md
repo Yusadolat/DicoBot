@@ -1,6 +1,6 @@
 # WhatsApp DicoBot
 
-WhatsApp DicoBot is a dictionary bot powered by Twilio WhatsApp API and Google Dictionary API 🤖 that enchances your messaging experience.
+WhatsApp DicoBot is a dictionary bot powered by Twilio WhatsApp API and Google Dictionary API 🤖 that enhances your messaging experience.
 
 When you search a word, you get the word meaning and it's usage. It's so fast and on point. This is how to beat your grammarian friends who bombard you with jaw threatening words. :laughing:
 
