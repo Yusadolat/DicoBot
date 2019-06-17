@@ -28,22 +28,22 @@ app.post('/incoming', (req, res) => {
       var define;
       var synonyms; 
       if (_.has(body, 'meaning.adjective') === true) {
-        define = body["meaning"]["adjective"][0]["definition"]
-        example = body["meaning"]["adjective"][0]["example"]
-        synonyms = body["meaning"]["adjective"][0]["synonyms"]
+        define = body[0]["meaning"]["adjective"][0]["definition"]
+        example = body[0]["meaning"]["adjective"][0]["example"]
+        synonyms = body[0]["meaning"]["adjective"][0]["synonyms"]
 
       } else if (_.has(body, 'meaning.noun') === true) {
 
-        define = body["meaning"]["noun"][0]["definition"]
-        example = body["meaning"]["noun"][0]["example"]
-        synonyms = body["meaning"]["noun"][0]["synonyms"]
+        define = body[0]["meaning"]["noun"][0]["definition"]
+        example = body[0]["meaning"]["noun"][0]["example"]
+        synonyms = body[0]["meaning"]["noun"][0]["synonyms"]
 
 
 
       } else if (_.has(body, 'meaning.verb') === true) {
-        define = body["meaning"]["verb"][0]["definition"]
-        example = body["meaning"]["verb"][0]["example"]
-        synonyms = body["meaning"]["verb"][0]["synonyms"]
+        define = body[0]["meaning"]["verb"][0]["definition"]
+        example = body[0]["meaning"]["verb"][0]["example"]
+        synonyms = body[0]["meaning"]["verb"][0]["synonyms"]
 
 
       } else {
@@ -53,7 +53,7 @@ app.post('/incoming', (req, res) => {
       
 
 
-      var msg = twiml.message(`*${body["word"]}*
+      var msg = twiml.message(`*${body[0]["word"]}*
 
 *Definition:* ${define}
 
