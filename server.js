@@ -1,70 +1,66 @@
-const express = require('express');
-const app = express();
-const request = require('request');
-const _ = require('lodash');
-const bodyParser = require('body-parser');
-
+var express = require("express");
+var app = express();
+var request = require("request");
+require("dotenv").config();
+var _ = require("lodash");
+const bodyParser = require("body-parser");
 
 const accountSid = process.env.SID;
-const authToken = process.env.SID;
-const client = require('twilio')(accountSid, authToken);
-const MessagingResponse = require('twilio').twiml.MessagingResponse;
+const authToken = process.env.TOKEN;
+const client = require("twilio")(accountSid, authToken);
+const MessagingResponse = require("twilio").twiml.MessagingResponse;
 
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(express.static("public"));
+//.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
 
-
-
-app.post('/incoming', (req, res) => {
+app.post("/incoming", (req, res) => {
   const twiml = new MessagingResponse();
-  console.log(req.body)
-  if (req.body.Body.toLowerCase().trim() != "hi" && req.body.Body.toLowerCase().trim() != "hello" && req.body.Body.toLowerCase().trim() != "test" && req.body.Body.toLowerCase().trim() != "help") {
-    request('https://googledictionaryapi.eu-gb.mybluemix.net/?define=' + req.body.Body, function (error, response, body) {
-      body = JSON.parse(body.trim())
-      console.log('body:', body["word"]);
-      var example;
-      var define;
-      var synonyms; 
-      if (_.has(body, 'meaning.adjective') === true) {
-        define = body["meaning"]["adjective"][0]["definition"]
-        example = body["meaning"]["adjective"][0]["example"]
-        synonyms = body["meaning"]["adjective"][0]["synonyms"]
+  console.log(req.body);
+  if (
+    req.body.Body.toLowerCase().trim() != "hi" &&
+    req.body.Body.toLowerCase().trim() != "hello" &&
+    req.body.Body.toLowerCase().trim() != "test" &&
+    req.body.Body.toLowerCase().trim() != "help"
+  ) {
+    request(
+      "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/" +
+        req.body.Body,
+      {
+        headers: {
+          app_id: process.env.APPID || "5756e0d2",
+          app_key: process.env.APPKEY || "531b184e25fba49dfad88cd6924dc59c"
+        }
+      },
+      function(error, response, body) {
+        body = JSON.parse(body.trim());
+        console.log("body:", body);
 
-      } else if (_.has(body, 'meaning.noun') === true) {
+        var msg = twiml.message(`*${body.results[0].id}*
 
-        define = body["meaning"]["noun"][0]["definition"]
-        example = body["meaning"]["noun"][0]["example"]
-        synonyms = body["meaning"]["noun"][0]["synonyms"]
+*Part of Speech:* ${body.results[0].lexicalEntries[0].lexicalCategory}
 
+*Definition:* ${
+          body.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+        }
 
+ *Example:* ${
+   body.results[0].lexicalEntries[0].entries[0].senses[0].examples[0].text
+ }
 
-      } else if (_.has(body, 'meaning.verb') === true) {
-        define = body["meaning"]["verb"][0]["definition"]
-        example = body["meaning"]["verb"][0]["example"]
-        synonyms = body["meaning"]["verb"][0]["synonyms"]
-
-
-      } else {
-        console.log("Sorry, No Result Found !");
+ *Pronunciation:* ${
+   body.results[0].lexicalEntries[0].pronunciations[0].phoneticSpelling
+ }  `);
+        res.writeHead(200, {
+          "Content-Type": "text/xml"
+        });
+        res.end(twiml.toString());
       }
-
-      
-
-
-      var msg = twiml.message(`*${body["word"]}*
-
-*Definition:* ${define}
-
- *Example:*  ${example}
-
- *Synonmys:*  ${synonyms.join(', ')}`);
-      res.writeHead(200, {
-        'Content-Type': 'text/xml'
-      });
-      res.end(twiml.toString());
-    });
+    );
   } else {
     var msg = twiml.message(`Hey 👋
 
@@ -73,24 +69,21 @@ I am your Whatsapp Word Assistant (WWA) -a wordtastic bot which helps you with t
 Try it out - send me a vocabulary you want to know its meaning.
 😉
 
-Sponsored by Pronto Afrika (c) 2018.  Developed by Yusadolat
-www.pronto.com.ng Leading Web/App Development Agency.`)
+Sponsored by Pronto Afrika(c) 2019.  Developed by Yusadolat`);
     res.writeHead(200, {
-      'Content-Type': 'text/xml'
+      "Content-Type": "text/xml"
     });
     res.end(twiml.toString());
   }
-
 });
 
-app.post('/check', function (req, res) {
-  console.log(req.body.Body)
+app.post("/check", function(req, res) {
+  console.log(req.body.Body);
 });
-app.get('*', function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
+app.get("*", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
 });
 
-
-var listener = app.listen(process.env.PORT || 3000, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+var listener = app.listen(process.env.PORT || 3000, function() {
+  console.log("Your app is listening on port " + listener.address().port);
 });

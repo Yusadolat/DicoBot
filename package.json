@@ -1,5 +1,4 @@
 {
-
   "name": "whatsapp_bot",
   "version": "0.0.1",
   "description": "A WhatsApp Dictionary Bot",
@@ -8,8 +7,10 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.16.3",
     "lodash": "4.17.11",
+    "pm2": "^3.5.1",
     "request": "^2.88.0",
     "twilio": "^4.6.0"
   },
