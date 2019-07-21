@@ -66,7 +66,7 @@ app.post("/incoming", (req, res) => {
 
 I am your Whatsapp Word Assistant (WWA) -a wordtastic bot which helps you with the meaning of any word, right within Whatsapp.
 
-Try it out - send me a vocabulary you want to know its meaning.
+Try it out - send me a word you want to know its meaning.
 😉
 
 Sponsored by Pronto Afrika(c) 2019.  Developed by Yusadolat`);
