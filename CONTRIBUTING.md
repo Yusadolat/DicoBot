@@ -8,6 +8,7 @@ This project has a [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md).
 
 * Blog or tweet about the project
 * Improve documentation
+* Help find out issues
 * Fix a bug
 * Implement a new feature
 * Discuss potential ways to improve project
@@ -52,4 +53,5 @@ Verify the tests are passing:
 npm test
 ```
 
+Written with ❤️ by Yusuf Adeyemo
 Thank You ! :smile:
