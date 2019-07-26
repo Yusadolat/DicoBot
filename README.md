@@ -27,6 +27,6 @@ $ npm start
 > App is running on http://localhost:3000
 
 ### Contributing
-See [CONTRIBUTING.md](https://github.com/Yusadolat/DicoBot/blob/master/CONTRIBUTING.md)
+Check our contributing guide here [CONTRIBUTING.md](https://github.com/Yusadolat/DicoBot/blob/master/CONTRIBUTING.md)
 
 # Enjoy !
