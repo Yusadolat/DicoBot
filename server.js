@@ -5,8 +5,8 @@ require("dotenv").config();
 var _ = require("lodash");
 const bodyParser = require("body-parser");
 
-const accountSid = process.env.SID || "AC8d80f004ec052e67b357f3bbe7f421a2";
-const authToken = process.env.TOKEN || "d9a7201801759ec530b0320c703f4bb9";
+const accountSid = process.env.SID;
+const authToken = process.env.TOKEN;
 const client = require("twilio")(accountSid, authToken);
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
 
