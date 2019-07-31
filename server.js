@@ -32,8 +32,8 @@ app.post("/incoming", (req, res) => {
         req.body.Body,
       {
         headers: {
-          app_id: process.env.APPID || "5756e0d2",
-          app_key: process.env.APPKEY || "531b184e25fba49dfad88cd6924dc59c"
+          app_id: process.env.APPID,
+          app_key: process.env.APPKEY
         }
       },
       function(error, response, body) {
