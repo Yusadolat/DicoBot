@@ -1,3 +1,7 @@
+[![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
+
+
+
 # WhatsApp DicoBot
 
 WhatsApp DicoBot is a dictionary bot powered by Twilio WhatsApp API and Oxford Dictionary API 🤖 that enhances your messaging experience.
